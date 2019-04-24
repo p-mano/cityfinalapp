@@ -1,0 +1,42 @@
+<ion-content >
+  <ion-card class='content'>
+      <ion-card-header >
+          <ion-card-title class="ion-text-center">SignUp Here</ion-card-title>
+        </ion-card-header>
+        
+             <ion-card-content >
+                    <ion-item>
+                      <ion-label position="floating">username</ion-label>
+                         <ion-input type='text'   [(ngModel)]="customer.name" ></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">password</ion-label>
+                     <ion-input type='password' [(ngModel)]="customer.password"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label position="floating">address</ion-label>
+                   <ion-input type='address' [(ngModel)]="customer.address"></ion-input>
+                  </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">Email </ion-label>
+                     <ion-input type='email' [(ngModel)]="customer.email"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                            <ion-label position="floating">phone </ion-label>
+                         <ion-input type='phone' [(ngModel)]="customer.phone"></ion-input>
+                        </ion-item>
+                      
+                    <ion-button  shape="block" color="primary" fill="outline"  (click)="addCustomer(customer)">Sign Up
+                    </ion-button>
+                    <p class='text-styles'>OR</p>
+                    <ion-button  shape="block" color="primary">
+                      <ion-icon name="logo-facebook"></ion-icon> Sign Up Login with facebook
+                    </ion-button>
+                 
+             </ion-card-content>
+            
+  </ion-card>
+ <p class='p-style' >  Already have account ? <a (click)='login()' class='text-styles'> Login Here </a></p>
+
+
+</ion-content>

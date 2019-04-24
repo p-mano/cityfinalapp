@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+        <ion-icon name="arrow-round-back" (click)="goback()"></ion-icon> 
+      Movies
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-toolbar>
+   <ion-searchbar  aria-placeholder="Search for Movies,Events & More"> <ion-icon name="notifications"></ion-icon></ion-searchbar>
+  </ion-toolbar>
+  
+<ion-content style="background:#f7f7f7;" >
+
+    <ion-slides #mySlider (ionSlidesDidLoad)="slidesDidLoad(mySlider)" autoplay="5000" loop="true" speed="60000"
+    pager="true">
+    <ion-slide *ngFor="let banners of slideData">
+    <img src={{banners.image}}>
+    </ion-slide>
+    </ion-slides>
+ 
+
+      <ion-grid *ngFor="let movie of movies">
+          <ion-row>
+            <ion-col>
+              <div >
+                  <img src={{movie.image_url}} (click)="onselect(movie.id)" >
+              </div>
+            </ion-col>
+            <ion-col> 
+                    <ion-card-title>{{movie.name}}</ion-card-title>
+                
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-half"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon> 
+                    <ion-card-subtitle>13,051 votes | {{movie.rating}}</ion-card-subtitle> 
+                    <span> <ion-icon name="heart" class='icon-style'></ion-icon></span> <span class="text-style"> 85%</span>
+                    
+            </ion-col> 
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-card-subtitle>
+                <span style="vertical-align:center;">UA | {{movie.type}}| {{movie.production_house}} |{{movie.language}} |{{movie.year}} </span>  
+                <ion-button style="float:right;" color="primary" (click)="navigateToBooking(movie.id)">Book Now</ion-button> <br> 
+              </ion-card-subtitle>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col> 
+                <p style="border-top: 1px solid #989aa29c;">
+                    <ion-card-title>Summary</ion-card-title>
+                  A culmination of 22 interconnected films the fourth installment of the Avengers saga 
+                    will draw audiences to witness the turning point of this epic journey.
+                </p>
+                </ion-col>
+                
+            </ion-row>
+        </ion-grid> 
+  
+  
+        </ion-content>

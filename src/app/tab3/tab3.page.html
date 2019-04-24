@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+        <ion-icon name="arrow-round-back" (click)="goback()"></ion-icon> 
+      Booking History
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let b of bookings" >
+  <ion-grid >
+      <ion-row>
+<ion-col>
+
+      
+<ion-card-title>{{b.movie_name}}</ion-card-title>
+</ion-col>
+  </ion-row>
+      <ion-row>
+          <ion-col> 
+                  <ion-card-subtitle>Tickets :{{b.tickets}}</ion-card-subtitle>
+                  <ion-card-subtitle>Theater: {{b.theatre}}</ion-card-subtitle>
+                  <ion-card-subtitle>City:{{b.city}}</ion-card-subtitle>
+                 
+                  
+                
+                 
+                  
+          </ion-col> 
+        </ion-row>
+        <ion-row>
+          <ion-col>
+     
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col> 
+              <p style="border-top: 1px solid #989aa29c;">
+                  <ion-card-subtitle>comment</ion-card-subtitle>
+                A culmination of 22 interconnected films the fourth installment of the Avengers saga 
+                  will draw audiences to witness the turning point of this epic journey.
+              </p>
+              </ion-col>
+            </ion-row> 
+        
+          </ion-grid>
+        </ion-card>
+      </ion-content>
+

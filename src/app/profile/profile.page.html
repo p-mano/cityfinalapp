@@ -1,0 +1,65 @@
+
+
+<ion-content>
+    <ion-header>
+        <ion-toolbar>
+        <ion-title>
+            <ion-icon name="arrow-round-back" (click)="goback()"></ion-icon> 
+        My Profile
+        </ion-title>
+        </ion-toolbar>
+        </ion-header>
+        <ion-content>
+        <!-- <ion-card>
+        <ion-item>
+        <ion-avatar slot="start">
+        <img src="../../assets/avatar.jpg">
+        </ion-avatar>
+        <ion-label (click)="onSignin()">Login</ion-label>
+        <ion-icon name="arrow-dropright" (click)="onSignin()" style="font-size:25px;color:#3880ff"></ion-icon>
+        </ion-item>
+        </ion-card> -->
+        
+        <ion-item>
+        <ion-label (click)="onBookings()">My Bookings</ion-label>
+        <ion-icon name="albums" style="font-size:20px;color:#3880ff"></ion-icon>
+        </ion-item>
+        <ion-item>
+        <ion-label (click)="onOffers()">Offers</ion-label>
+        <ion-icon name="pricetag" style="font-size:20px;color:#3880ff"></ion-icon>
+        </ion-item>
+        <ion-item>
+        <ion-label (click)="onWallet()">Wallet</ion-label>
+        <ion-icon name="wallet" style="font-size:20px;color:#3880ff"></ion-icon>
+        </ion-item>
+        <ion-item>
+        <ion-label>Notifications</ion-label>
+        <ion-icon name="notifications" style="font-size:20px;color:#3880ff"></ion-icon>
+        </ion-item>
+        <ion-item>
+        <ion-label>Refer&Earn</ion-label>
+        <ion-icon name="heart-half" style="font-size:20px;color:#3880ff"></ion-icon>
+        </ion-item>
+        <ion-item>
+        <ion-label>Call Support</ion-label>
+        <ion-icon name="headset" style="font-size:20px;color:#3880ff"></ion-icon>
+        </ion-item>
+        <ion-item>
+        <ion-label>About Us</ion-label>
+        <ion-icon name="egg" style="font-size:20px;color:#3880ff"></ion-icon>
+        </ion-item>
+        <ion-item>
+        <ion-label>Help</ion-label>
+        <ion-icon name="help-circle" style="font-size:20px;color:#3880ff"></ion-icon>
+        </ion-item>
+        <ion-item>
+        <ion-label>Settings</ion-label>
+        <ion-icon name="settings" style="font-size:20px;color:#3880ff"></ion-icon>
+        </ion-item>
+       
+        <ion-item>
+        <ion-label (click)="onLogout()"> Logout</ion-label>
+        <ion-icon style="font-size:30px;color:#3880ff" (click)="onLogout()" name="log-out"></ion-icon>
+        </ion-item>
+   
+</ion-content>
