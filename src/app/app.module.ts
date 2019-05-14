@@ -16,12 +16,15 @@ import { ForgetpasswordComponent } from "./forgetpassword/forgetpassword.compone
 import { PaymentComponent } from "./payment/payment.component";
 import {PaymentdoneComponent} from './paymentdone/paymentdone.component';
 import {BookingComponent} from './booking/booking.component';
+import { IonicStorageModule } from '@ionic/storage';
+import { Storage } from '@ionic/storage';
 import { from } from 'rxjs';
 
 @NgModule({
   declarations: [AppComponent,LoginComponent,RegisterComponent,ForgetpasswordComponent,PaymentComponent,PaymentdoneComponent,BookingComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule,HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(),
+    IonicStorageModule.forRoot(), AppRoutingModule,FormsModule,HttpClientModule],
   providers: [
     StatusBar,
     SplashScreen,

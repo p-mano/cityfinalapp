@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import CustomerService from '../customer.service';
 import { AlertController } from '@ionic/angular';
 import { LoadingController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { LoadingController } from '@ionic/angular';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router,private customerService:CustomerService,public loadingController: LoadingController,public alertController: AlertController) { }
+  constructor(private router: Router,private storage: Storage,private customerService:CustomerService,public loadingController: LoadingController,public alertController: AlertController) { }
  customers=[];
  customer={email:"",password:"",}
  res:any={};
@@ -20,15 +21,24 @@ export class LoginComponent implements OnInit {
   }
   async doLogin(customer){
     this.customerService.getRemoteCustomers(customer).subscribe((result) => {
-      console.log(result);
+      // console.log(result);
       this.res=result;
-      console.log('res===>',this.res)
-      localStorage.setItem('customer',JSON.stringify(result))
+      // console.log('res===>',this.res)
+      // localStorage.setItem('customer',JSON.stringify(result))
+      // console.log(customer)
+      
       
     if(this.res.result[0].password==customer.password){
   
       console.log('iam here lalala')
           this.router.navigate(['/tabs/tab1']);
+            // set a key/value
+  
+
+  // Or to get a key/value pair
+  this.storage.get('email').then((val) => {
+    console.log('Your age is', val);
+  });
           
     }
     else {
